@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Columns</title>
+    <style>
+        body{
+            font-family: Arial;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: 25% 200px 25%;
+            /* Tal cual como estabamos definiendo las columnas vamos a hacerlo con las filas*/
+            /* Al definir las columnas automaticamente se definen las filas pero yo puedo definir mis propias columnas definiendo el tamaño de ellas, pero si de 4 filas que automaticamente se crearon yo definiera el tamaño de 2 las otras 2 se conservarian del tamaño original. Con la instruccion grid-template-rows yo defino el tamaño de las filas que voy a manipular. Hay dos tipos de grid uno explicito que manipulo yo y el segundo es implicito el cual yo no especifico su tamaño pero se forma de manera automatica*/
+            grid-template-rows: 200px 200px;
+            /* yo puedo asignar el tamaño de las filas y las columnas en una sola instrccion -> grid-template: filas / columnas; <- */
+            grid-template: 300px 100px 100px /50% 25% 25%;
+            /* Esta linea sobre-escribe las dos anterioes que tambien sean de creacion de filas y columas */
+        }
+        .item{
+            background: lightblue;
+            padding: 10px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="container">
+
+        <div class="item">contenido #1</div>
+        <div class="item">contenido #2</div>
+        <div class="item">contenido #3</div>
+        <div class="item">contenido #4</div>
+        <div class="item">contenido #5</div>
+        <div class="item">contenido #6</div>
+        <div class="item">contenido #7</div>
+        <div class="item">contenido #8</div>
+        <div class="item">contenido #9</div>
+        <div class="item">contenido #10</div>
+        <div class="item">contenido #11</div>
+        <div class="item">contenido #12</div>
+
+    </section>
+</body>
+</html>
