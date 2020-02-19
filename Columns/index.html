@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Columns</title>
+    <!-- Aunque hay varias formas de poner css, pero para que sea mas sencillo de ver todo lo que mueve este modulo lo implementaremos usando la etiqueta style y voy a poner adentro mis estilos-->
+    <style>
+        /* Usando un selector de etiqueta al body para empezar a realizar cambios */
+        body{
+            font-family: Arial;
+        }
+        /* Lo que tenemos que hacer es crear nuestro primer grid-container, llamando a nuestro elemento contenedor por su clase container */
+        .container{
+            /* Lo primero que tengo que empezar a hacer es agregar el tipo de display grid, para que sea nuestro grid-container debe tenerlo para empezar a trabajar con el modulo de css grid-layout*/
+            display: grid;
+            /* Por defecto no hay una asignacion de filas o de columnas dentro de nuestro grid, asi que de inicio no vamos a ver un imparto visual solo con la linea display:grid pero gracias a que tenemos este diplay puedo apoyarme en nuevas propiedades para hacer que nuestro grid haga lo que yo quiero, par empezar ordenar mis items en columnas*/
+            grid-template-columns: 25% 200px 25%;
+            /* Con la linea anterior puedo asignar  los tamaños de las columnas que quiero crear y con espacion puedo decir cuantas columnas van a ser. En este caso van a ser 3 columnas con tamaños variados, por que podemos combinar las medidas que uno pueda saber*/
+        }
+    </style>
+</head>
+<body>
+    <!-- Lo primero que debo hace para empezar con mi grid es crear algo de contenido html -->
+    <section class="container">
+        <!-- Voy a poner varios items que van hacer parte de mi grid, que van hacer simplemente 12 divs usando esta formula .item{contenido #$}*12 -->
+        <div class="item">contenido #1</div>
+        <div class="item">contenido #2</div>
+        <div class="item">contenido #3</div>
+        <div class="item">contenido #4</div>
+        <div class="item">contenido #5</div>
+        <div class="item">contenido #6</div>
+        <div class="item">contenido #7</div>
+        <div class="item">contenido #8</div>
+        <div class="item">contenido #9</div>
+        <div class="item">contenido #10</div>
+        <div class="item">contenido #11</div>
+        <div class="item">contenido #12</div>
+
+    </section>
+</body>
+</html>
