@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Displays</title>
+    <style>
+        body{
+            font-family: Arial;
+        }
+        .container{
+            display: grid;
+            grid-template: 300px 100px 100px /50% 25% 25%;
+        }
+        .item{
+            background: lightblue;
+            padding: 10px;
+            border: 1px solid red;
+        }
+        /* Lo mas importante sobre nuestro sobre nuestro grid System ya lo dominamos tanto filas como columnas, podemos asignar este espacio explicito donde le decimos cuantas filas y columnas hay y que tamaño tienen. */
+        /* ¿Se puede tener un grid dentro de otro grid? RTA: Por supuesto que si */
+        /* Vamos a ver los displays que nos dan nuevos grids, Vamos a tomar un elemento item al azar y ponemos un grid adentro de el, vamos a seleccionar el numero 4 */
+        /* Utilizando la seudoclase nth-of-type seleccionamos un elemento del tipo que le indiquemos escribiendo el numero */
+        .item:nth-of-type(4){
+            /* aca dentro de las llaves ya podemos darle estilos independientes a este elemento */
+            background: blueviolet;
+            overflow: auto;
+            /* Vamos a agregar otro tipo display, llamado display: subgrid que heredaria toda la configuracion de su grid padre sin tener que escribir otra vez las configuraciones de grid-template o display: grid */
+            /* Vamos a perzonalizar de una manera diferente para ver que solo se aplica al sub-elemento */
+            display: grid;
+            grid-template: 50px 50px 50px / 200px 200px 200px;
+        }
+        /* Si yo quiero agregarle un selector a item que estan dentro de item simplemente lo hacemos de la siguiente manera */
+        .item .item{
+            background: brown;
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="container">
+
+        <div class="item">contenido #1</div>
+        <div class="item">contenido #2</div>
+        <div class="item">contenido #3</div>
+        <div class="item">
+            <!-- adentro de nuestro elemento vamos a agregarle nuevos hijos -->
+            <div class="item">subitem #1</div>
+            <div class="item">subitem #2</div>
+            <div class="item">subitem #3</div>
+            <div class="item">subitem #4</div>
+            <div class="item">subitem #5</div>
+            <!-- Gracias a que no tenemos ningun tipo de overflow no podemos ni siquiera hacer un scroll en el contenido hasta que lo agreguemos en la clase especificada .item:nth-of-type(4) -->
+        </div>
+        <div class="item">contenido #5</div>
+        <div class="item">contenido #6</div>
+        <div class="item">contenido #7</div>
+        <div class="item">contenido #8</div>
+        <div class="item">contenido #9</div>
+        <div class="item">contenido #10</div>
+        <div class="item">contenido #11</div>
+        <div class="item">contenido #12</div>
+
+    </section>
+</body>
+</html>
