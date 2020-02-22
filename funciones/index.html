@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones</title>
+    <!--Ya podemos replicar todo lo que hemos aprendido en el pasado con CSS, dentro de grid-layout. Ahora empezamos a ver nuevas posibilidades de lo que podemos hacer. Lo primero es una nueva unidad de medida como lo son fracciones o fr que simboliza una fracción de espacio restante en el grid. -->
+    <style>
+        body{
+            font-family: Arial;
+        }
+        .container{
+            display: grid;
+            /* Que tal si a mis columnas les asigno 1fr 1fr 1fr. En este momento a las columnas les estoy diciendo que dividan el espacio en 3 y acada de una se les asigne una parte igual que a las otras dos, por lo que del 100% del espacio les asigno un 33.33333%  */
+            grid-template: 300px 100px 100px /1fr 1fr 1fr;
+            /* Hay una funcion llamada repeat();, y lo que hace esta funcion es que podemos escribir las veces que queremos que la repita y luego decirle la configuracion que deseemos. ejemplo repeat(4, 1fr);*/
+            grid-template: 300px 100px 100px / repeat(4, 1fr);
+            /* Podemos mejorar las cosas aun mas, usando una funcion dentro de una funcion y esa es minmax(), al hacer mas pequeño nuestro espacio necesito asegurar que ocupe una determinada cantidad de pixeles pero con el espacio indicado puedo asignar la fraccion del espacion sin que mi contenido se dañe*/
+            grid-template: 300px 100px 100px / repeat(4, minmax(200px,1fr));
+            gap: 30px;
+        }
+        .item{
+            background: lightblue;
+            padding: 10px;
+            border: 1px solid red;
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="container">
+
+        <div class="item">contenido #1</div>
+        <div class="item">contenido #2</div>
+        <div class="item">contenido #3</div>
+        <div class="item">contenido #4</div>
+        <div class="item">contenido #5</div>
+        <div class="item">contenido #6</div>
+        <div class="item">contenido #7</div>
+        <div class="item">contenido #8</div>
+        <div class="item">contenido #9</div>
+        <div class="item">contenido #10</div>
+        <div class="item">contenido #11</div>
+        <div class="item">contenido #12</div>
+
+    </section>
+</body>
+</html>
