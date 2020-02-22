@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Areas</title>
+    <!-- Un website no son filas y columnas simetricas todo el tiempo, ademas tiene un header, un footer, una nevegacion un contenido como puedo lograrlo con css grid layout. -->
+    <style>
+        body{
+            font-family: Arial;
+        }
+        /*  */
+        .container{
+            display: grid;
+            /* Usando la propiedad grid-template voy a crear el layout que me permite replicar mi diseño en este coso 3 filas y 2 columnas */
+            grid-template: 100px 1fr 150px/200px 1fr;
+            gap: 10px;
+            /* Para que la medida fr sirva adecuadamente debo asignarle a mi contenedor una altura especifica en este caso 100vh */
+            height: 100vh;
+            /* Vamos a definir las areas de mi contenido usando la propiedad grid-area. En la propiedad escribiremos el lugar que ocupan las clases en nuestro website. Estas clases seran asignadas a nuestros elementos html y luego en el css clase por clase usaremos la propiedad grid-area para unirlos*/
+            grid-area: "header header"
+                       "left contenido"
+                       "footer footer";
+        }
+        .item{
+            background: lightblue;
+            padding: 10px;
+            border: 1px solid red;
+        }
+        /* Asignamos las clases con las areas */
+        .header{
+            /* Propiedad aplicada a los hijos de un grid-container */
+            grid-area: header;
+        }
+        /* Asignamos las clases con las areas */
+        .left{
+            /* Propiedad aplicada a los hijos de un grid-container */
+            grid-area: left;
+        }
+        /* Asignamos las clases con las areas */
+        .contenido{
+            /* Propiedad aplicada a los hijos de un grid-container */
+            grid-area: contenido;
+        }
+        /* Asignamos las clases con las areas */
+        .footer{
+            /* Propiedad aplicada a los hijos de un grid-container */
+            grid-area: footer;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="container">
+        <!-- Asignamos nuevas clases indicando que grid-area representan. -->
+        <div class="item header">header</div>
+        <div class="item left">left</div>
+        <div class="item contenido">contenido</div>
+        <div class="item footer">footer</div>
+        
+
+    </section>
+</body>
+</html>
