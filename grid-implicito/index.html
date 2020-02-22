@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid implicito</title>
+   <!-- El grid implicito va a ser formado por los elementos html que no son contemplados dentro de las filas y columnas que tenemos dentro de css. Es decir los elementos "sobrantes" a los que no se les asigno una alineacion determinada. Cuando se usa css grid el navegador tiene que asumir algunos comportamientos cuando las cosas no son claras.-->
+    <style>
+        body{
+            font-family: Arial;
+        }
+        
+        .container{
+            display: grid;
+            grid-template-columns: [inicioV1] 1fr [lineaV2] 1fr [lineaV3] 1fr [destacadofin] 1fr [lineaV5] 1fr [destacado2fin] 1fr [lineaV7] 1fr [finV8];
+            grid-template-rows: [inicioH1] 200px [LineaH2] 200px [finH3];
+            height: 100vh;
+            gap: 5px;
+            /* Hay una propiedad que maneja nuestro gird implicito que se llama grid-auto-flow que tiene un valor por defecto de row por lo que si deseamos cambiar el flujo automatico debemos asignarle en column. */
+            grid-auto-flow: column;
+            /* Hay valores similares que sirven para organizar en  forma de filas con grid-auto-rows donde les podemos asignar el ancho o forma de columnas con grid-auto-colums donde les podemos asignar el ancho de las columas  */
+
+        }
+        .item{
+            background: lightblue;
+            padding: 10px;
+            border: 1px solid red;
+        }
+
+       
+
+        .item:nth-of-type(1){
+            grid-column: inicioV1 / destacadofin;
+            grid-row: inicioH1 / finH3;
+        }
+        .item:nth-of-type(2){
+           grid-column: destacadofin / destacado2fin;grid-row: inicioH1 / finH3;
+        }
+        .item:nth-of-type(3){
+           grid-column: destacado2fin / finV8;
+            
+        }
+        .item:nth-of-type(4){
+            
+            
+        }
+        .item:nth-of-type(5){
+            
+        }
+    </style>
+</head>
+<body>
+
+    <section class="container">
+        
+        <div class="item">contenido #1</div>
+        <div class="item">contenido #2</div>
+        <div class="item">contenido #3</div>
+        <div class="item">contenido #4</div>
+        <div class="item">contenido #5</div>
+        <div class="item">contenido #5</div>
+        <div class="item">contenido #5</div>
+        <div class="item">contenido #5</div>
+        <div class="item">contenido #5</div>
+        <div class="item">contenido #5</div>
+
+    </section>
+</body>
+</html>
