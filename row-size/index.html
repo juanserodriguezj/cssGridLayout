@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamaño de item en Filas</title>
+    <!--Que pasa si yo no quiero ponerle un nombre a esas areas o no puedo, pero quiero que algunos items sean mas anchos, mas altos "que ocupen mas filas o mas columnas" -->
+    <style>
+        body{
+            font-family: Arial;
+        }
+        
+        .container{
+            display: grid;
+            
+            grid-template-columns: repeat(7,1fr);
+            grid-template-rows: repeat(2,200px);
+            height: 100vh;
+            gap: 5px;
+
+        }
+        .item{
+            background: lightblue;
+            padding: 10px;
+            border: 1px solid red;
+        }
+
+        /* Lo que quiero hacer es que uno de mis items sea un poco mas ancho, que ocupe varios espacios o que ocupe desde el inicio hasta la mitad "espaciado entre filas".  */
+
+        .item:nth-of-type(1){
+            grid-column:1/span 3;
+            grid-row: 1/span 2;
+        }
+        .item:nth-of-type(2){
+            grid-column: 4 / span 2;
+            grid-row: 1/span 2;
+        }
+        .item:nth-of-type(3){
+            grid-column: 6 / span 2;
+        }
+        .item:nth-of-type(4){
+            
+            
+        }
+        .item:nth-of-type(5){
+            
+        }
+    </style>
+</head>
+<body>
+
+    <section class="container">
+        
+        <div class="item">contenido #1</div>
+        <div class="item">contenido #2</div>
+        <div class="item">contenido #3</div>
+        <div class="item">contenido #4</div>
+        <div class="item">contenido #5</div>
+
+    </section>
+</body>
+</html>
