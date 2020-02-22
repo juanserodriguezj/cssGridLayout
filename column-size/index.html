@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamaño de item en columnas</title>
+    <!--Que pasa si yo no quiero ponerle un nombre a esas areas o no puedo, pero quiero que algunos items sean mas anchos, mas altos "que ocupen mas filas o mas columnas" -->
+    <style>
+        body{
+            font-family: Arial;
+        }
+        
+        .container{
+            display: grid;
+            
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(41fr);
+            gap: 10px;
+            height: 100vh;
+
+        }
+        .item{
+            background: lightblue;
+            padding: 10px;
+            border: 1px solid red;
+        }
+
+        /* Lo que quiero hacer es que uno de mis items sea un poco mas ancho, que ocupe varios espacios o que ocupe desde el inicio hasta la mitad "espaciado entre columnas".  */
+
+        .item:nth-of-type(1){
+            /* Usando el selector le digo que me ocupe 1 y 2 espacios, para eso tengo que decirle donde empieza y donde termina indicandole las grid-lines necesarias*/
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .item:nth-of-type(8){
+            /* Usando una sola propiedad podemos indicar donde empieza y donde termina con grid-column: gridLine-inicial / gridLine-final;*/
+            grid-column: 1 / 4;
+        }
+        .item:nth-of-type(7){
+            /* Para indicar que si o si ocupe 2 espacios agrego en la parte del final la palabra span asi me aseguro que ocupe dos espacios. La parte donde le indico donde inicie sigue siendo espacio para las grid-lines */
+            grid-column: 2 / span 2;
+        }
+        .item:nth-of-type(10){
+            /* Par inidicarle a item que ocupe to el ancho disponible sin importar el numero de columnas escribo que inicie en 1 y termine en -1 */
+            grid-column: 2 / -1;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <section class="container">
+        
+        <div class="item">contenido #1</div>
+        <div class="item">contenido #2</div>
+        <div class="item">contenido #3</div>
+        <div class="item">contenido #4</div>
+        <div class="item">contenido #5</div>
+        <div class="item">contenido #6</div>
+        <div class="item">contenido #7</div>
+        <div class="item">contenido #8</div>
+        <div class="item">contenido #9</div>
+        <div class="item">contenido #10</div>
+        <div class="item">contenido #11</div>
+        <div class="item">contenido #12</div>
+
+    </section>
+</body>
+</html>
