@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombrando las GridLines</title>
+   <!-- Ya sabemos ubicar nuestro contenido dentro de filas y columnas dandoles un espacio especial logrando la dispocision de nuestro layout deseado diciendo que tantas filas o columnas tomar. -->
+   <!-- Pero hay formas "mas sencillas" en las que podemos ubicar nuestro contenido, renombrando las lineas divisorias, pasar de (linea 1 y linea n) a (inicio y final)  -->
+    <style>
+        body{
+            font-family: Arial;
+        }
+        
+        .container{
+            display: grid;
+            /* Lo primero que voy a hacer es darle un nombre a mis columnas, para eso debo asignar los espacios a mano y antes y despues los nombres de las lineas verticales entre corchetes cuadrados [] */
+            grid-template-columns: [inicioV1] 1fr [lineaV2] 1fr [lineaV3] 1fr [destacadofin] 1fr [lineaV5] 1fr [destacado2fin] 1fr [lineaV7] 1fr [finV8];
+            /* Despues lo que puedo a hacer es darle un nombre a mis filas, para eso debo asignar los espacios a mano y antes y despues los nombres de las lineas Horizontales entre corchetes cuadrados [] */
+            grid-template-rows: [inicioH1] 200px [LineaH2] 200px [finH3];
+            height: 100vh;
+            gap: 5px;
+
+        }
+        .item{
+            background: lightblue;
+            padding: 10px;
+            border: 1px solid red;
+        }
+
+       
+
+        .item:nth-of-type(1){
+            grid-column: inicioV1 / destacadofin;
+            grid-row: inicioH1 / finH3;
+        }
+        .item:nth-of-type(2){
+           grid-column: destacadofin / destacado2fin;grid-row: inicioH1 / finH3;
+        }
+        .item:nth-of-type(3){
+           grid-column: destacado2fin / finV8;
+            
+        }
+        .item:nth-of-type(4){
+            
+            
+        }
+        .item:nth-of-type(5){
+            
+        }
+    </style>
+</head>
+<body>
+
+    <section class="container">
+        
+        <div class="item">contenido #1</div>
+        <div class="item">contenido #2</div>
+        <div class="item">contenido #3</div>
+        <div class="item">contenido #4</div>
+        <div class="item">contenido #5</div>
+
+    </section>
+</body>
+</html>
