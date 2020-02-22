@@ -9,7 +9,7 @@
         body{
             font-family: Arial;
         }
-        /*  */
+        
         .container{
             display: grid;
             /* Usando la propiedad grid-template voy a crear el layout que me permite replicar mi diseño en este coso 3 filas y 2 columnas */
@@ -18,7 +18,7 @@
             /* Para que la medida fr sirva adecuadamente debo asignarle a mi contenedor una altura especifica en este caso 100vh */
             height: 100vh;
             /* Vamos a definir las areas de mi contenido usando la propiedad grid-area. En la propiedad escribiremos el lugar que ocupan las clases en nuestro website. Estas clases seran asignadas a nuestros elementos html y luego en el css clase por clase usaremos la propiedad grid-area para unirlos*/
-            grid-area: "header header"
+            grid-template-areas: "header header"
                        "left contenido"
                        "footer footer";
         }
