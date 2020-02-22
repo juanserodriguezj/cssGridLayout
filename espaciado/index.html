@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gap</title>
+    <style>
+        body{
+            font-family: Arial;
+        }
+        .container{
+            display: grid;
+            grid-template: 300px 100px 100px /50% 25% 25%;
+            /* Ahora para agregar margenes entre mis columnas y filas utilizamos la propiedad gap */
+           /* Para el espaciado en las columnas usabamos el grid-column-gap ahora es solo */ 
+           column-gap: 30px;
+           /* Para el espaciado en las filas usabamos el grid-row-gap ahora es solo */ 
+           row-gap: 30px;
+           /* Para el espaciado en columnas como en filas usabamos la propiedad grid-gap: filas columnas. Ahora es solo */ 
+           gap: 30px 40px;
+           /* Si quieres una propiedad resumida tienes que usar */
+           gap: 30px;
+        }
+        .item{
+            background: lightblue;
+            padding: 10px;
+            border: 1px solid red;
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="container">
+
+        <div class="item">contenido #1</div>
+        <div class="item">contenido #2</div>
+        <div class="item">contenido #3</div>
+        <div class="item">contenido #4</div>
+        <div class="item">contenido #5</div>
+        <div class="item">contenido #6</div>
+        <div class="item">contenido #7</div>
+        <div class="item">contenido #8</div>
+        <div class="item">contenido #9</div>
+        <div class="item">contenido #10</div>
+        <div class="item">contenido #11</div>
+        <div class="item">contenido #12</div>
+
+    </section>
+</body>
+</html>
