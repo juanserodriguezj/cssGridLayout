@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alineacion de contenidos</title>
+   <!-- Todo lo que vimos hasta el momento nos ayuda a  construir nuestro layout, pero tambien tenemos algunas opciones adicionales que nos permite ordenar nuestro contenido, alinear horizontal y verticalmente todo el grid completo o solo los items internos.-->
+    <style>
+        body{
+            font-family: Arial;
+        }
+        /* Lo primero que debemos hacer es definir un grid facil de manejar y entender.  */
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 5px;
+            height: 100vh;
+        /* Existen dos propiedades que tenemos en el container y en el item, la primera es justify-items: ; y la segunda es align-items: ;*/
+        /* justify-items: ; nos ayudara a hacer un alineado horizontal, recibe valores de start end center stretch. stretch va estirar los elementos para que ocupen todo el espacio disponible, en este caso el espacio que nos da el grid, start va ubicar los item hacia la izquierda y mostrara el ancho que tienen de contenido, end hara lo mismo pero hacia la derecha, center ubicara el contenido en el centro y tambien mostrara el contenido que ocupe el item*/
+            justify-items: center;
+        /* justify-items: ; nos ayudara a hacer un alineado vertical, recibe valores de start, end, center, y stretch. stretch va estirar los elementos para que ocupen todo el espacio disponible, en este caso el espacio que nos da el grid, start va ubicar los item hacia arriba y mostrara el ancho que tienen de contenido, end hara lo mismo pero hacia la abajo, center ubicara el contenido en el centro y tambien mostrara el contenido que ocupe el item*/
+            align-items: center;
+        }
+        .item{
+            background: lightblue;
+            padding: 10px;
+            border: 1px solid red;
+        }
+        /* Pero si yo quiero que solo un elemento tenga una alineacion diferente usaremos una seleccion diferente*/
+        .item:nth-of-type(5){
+            align-self: start;
+            justify-self: start;
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="container">
+        <!-- creamos los items que nos serviran de ejemplo. -->
+        <div class="item">item #1</div>
+        <div class="item">item #2</div>
+        <div class="item">item #3</div>
+        <div class="item">item #4</div>
+        <div class="item">item #5</div>
+        <div class="item">item #6</div>
+        <div class="item">item #7</div>
+        <div class="item">item #8</div>
+        <div class="item">item #9</div>
+        <div class="item">item #10</div>
+        <div class="item">item #11</div>
+        <div class="item">item #12</div>
+
+    </section>
+</body>
+</html>
