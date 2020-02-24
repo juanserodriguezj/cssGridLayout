@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alineacion de Filas y columnas</title>
+   <!-- Todo lo que vimos hasta el momento nos ayuda a  construir nuestro layout, pero tambien tenemos algunas opciones adicionales que nos permite ordenar nuestro contenido, alinear horizontal y verticalmente todo el grid completo o solo los items internos.-->
+    <style>
+        body{
+            font-family: Arial;
+        }
+        /* Lo primero que debemos hacer es definir un grid facil de manejar y entender.  */
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3, 200px);
+            grid-template-rows: repeat(4, 50px);
+            gap: 5px;
+            height: 100vh;
+        /* Existen dos propiedades que tenemos en el container y en el item, la primera es justify-content: ; y la segunda es align-content: ;*/
+        /* justify-content: ; nos ayudara a hacer un alineado horizontal, recibe propiedades como start, end, center, stretch, space-around, space-between, space-evenly */
+            justify-content: center;
+        /* aling-content: ; nos ayudara a hacer un alineado vertical,recibe propiedades como start, end, center, stretch, space-around, space-between, space-evenly */
+            align-content: center;
+        }
+        .item{
+            background: lightblue;
+            padding: 10px;
+            border: 1px solid red;
+        }
+        /* Pero si yo quiero que solo un elemento tenga una alineacion diferente usaremos una seleccion diferente*/
+        
+
+    </style>
+</head>
+<body>
+
+    <section class="container">
+        <!-- creamos los items que nos serviran de ejemplo. -->
+        <div class="item">item #1</div>
+        <div class="item">item #2</div>
+        <div class="item">item #3</div>
+        <div class="item">item #4</div>
+        <div class="item">item #5</div>
+        <div class="item">item #6</div>
+        <div class="item">item #7</div>
+        <div class="item">item #8</div>
+        <div class="item">item #9</div>
+        <div class="item">item #10</div>
+        <div class="item">item #11</div>
+        <div class="item">item #12</div>
+
+    </section>
+</body>
+</html>
